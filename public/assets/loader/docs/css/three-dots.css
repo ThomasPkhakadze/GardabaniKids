@@ -1,0 +1,116 @@
+
+/*!
+ * three-dots - v0.2.3
+ * CSS loading animations made with single element
+ * https://nzbin.github.io/three-dots/
+ *
+ * Copyright (c) 2018 nzbin
+ * Released under MIT License
+ */
+@charset "UTF-8";
+/**
+ * ==============================================
+ * Dot Windmill Big
+ * ==============================================
+ */
+.dot-windmill-big {
+  position: relative;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #274151;
+  color: #274151;
+  transform-origin: 10px 30px;
+  -webkit-animation: dot-windmill 2s infinite linear;
+  animation: dot-windmill 2s infinite linear;
+}
+
+.dot-windmill-big::before, .dot-windmill-big::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+
+.dot-windmill-big::before {
+  left: -13.66254px;
+  top: 25px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #274151;
+  color: #274151;
+}
+
+.dot-windmill-big::after {
+  left: 13.66254px;
+  top: 25px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #274151;
+  color: #274151;
+}
+/**
+ * ==============================================
+ * Dot Windmill
+ * ==============================================
+ */
+.dot-windmill {
+  position: relative;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #274151;
+  color: #274151;
+  transform-origin: 5px 15px;
+  -webkit-animation: dot-windmill 2s infinite linear;
+  animation: dot-windmill 2s infinite linear;
+}
+
+.dot-windmill::before, .dot-windmill::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+
+.dot-windmill::before {
+  left: -8.66254px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #274151;
+  color: #274151;
+}
+
+.dot-windmill::after {
+  left: 8.66254px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #274151;
+  color: #274151;
+}
+
+@-webkit-keyframes dot-windmill {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotateZ(720deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes dot-windmill {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotateZ(720deg) translate3d(0, 0, 0);
+  }
+}
+
+/*# sourceMappingURL=three-dots.css.map */
