@@ -102,7 +102,7 @@ thead th{
 .rounded-table-heading-right{
     border-top-right-radius: 15px !important;
 }
-.rounded-table-row > th , td {
+.rounded-table-row > th , .single-branch > td {
     padding: 0.8em !important;
 }
 /* about */

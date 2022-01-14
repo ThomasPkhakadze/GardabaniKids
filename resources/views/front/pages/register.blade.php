@@ -20,7 +20,7 @@
                             <input type="text" class="form-control br-23" id="parent_id_number" placeholder="name@example.com">
                                 <label for="parent_id_number">პირადი ნომერი</label>
                         </div>
-                        <div class="form-floating my-2">
+                        <div class="form-floating mb-3">
                             <select class="form-select br-23" id="floatingSelectGuardian" aria-label="Floating label select example">
                                 <option value="დედა">დედა</option>
                                 <option value="მამა">მამა</option>
@@ -53,14 +53,14 @@
                         </div>
                         <div class="form-floating mb-3">                            
                             <input type="text" class="form-control br-23" id="date_of_birth" placeholder="name@example.com">
-                                {{-- <label for="date_of_birth">დაბადების თარიღი</label> --}}
+                                <label for="date_of_birth">დაბადების თარიღი</label>
                         </div>
-                        <div class="form-floating my-2">
+                        <div class="form-floating mb-3">
                             <select class="form-select br-23" id="floatingSelectBranches" aria-label="Floating label select example">
                             </select>
                             <label for="floatingSelectBranches">ბაღის ფილიალი</label>
                         </div>
-                        <div class="form-floating my-2">
+                        <div class="form-floating mb-3">
                             <select class="form-select br-23" id="floatingSelectGroups" aria-label="Floating label select example">
                             </select>
                             <label for="floatingSelectGroups">ფილიალის ჯგუფები</label>
@@ -116,7 +116,7 @@
             'id' : selectedBranchId,
             "_token": "{{ csrf_token() }}"
         }
-      //   console.log(data);
+        // console.log(data);
         $.ajax({
             url: "{{ route('getBranchGroups') }}",
             method: "POST",
@@ -155,7 +155,7 @@
                alert(JSON.stringify(err));
             }   
         });
-        $( "#date_of_birth" ).datepicker();
+        $("#date_of_birth").datepicker();
 
     });
 
