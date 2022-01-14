@@ -30,7 +30,7 @@
                             <a onclick="Router('/contact')" class="nav-link txt-bluish active" aria-current="page" href="#"><p class="mb-0">კონტაქტი</p></a>
                         </li>
                         <li class="nav-item ">
-                            <a onclick="Router('/about')" class="nav-link txt-bluish active" aria-current="page" href="#"><p class="mb-0">ჩვენს შესახებ </p></a>
+                            <a onclick="Router('/about')" class="nav-link txt-bluish active" aria-current="page" href="#"><p class="mb-0">ჩვენ შესახებ </p></a>
                         </li>
                           <li class="nav-item ">
                             <a class="nav-link txt-bluish active" aria-current="page" href="#"><p class="mb-0">ქარ</p></a>

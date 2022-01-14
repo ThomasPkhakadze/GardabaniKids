@@ -87,6 +87,9 @@ header{
     top: 50%;
     left: 50%;
 }
+thead th{
+    white-space: nowrap;
+}
 .rounded-table-header, .rounded-table-row{
     background: #274151 !important;
     color: white !important;
