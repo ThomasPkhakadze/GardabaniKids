@@ -14,7 +14,7 @@ class AddPhoneToParentGuardianTable extends Migration
     public function up()
     {
         Schema::table('parent_guardians', function (Blueprint $table) {
-            $table->integer('phone')->change();
+            $table->integer('phone')->after('id_number');
         });
     }
 
