@@ -54,16 +54,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <p>
-
-        <input type="text" id="test">
-    </p>
-    
+    </div>    
     <script src="./assets/js/router.js"></script>
-    <script>
-        $("#test").datepicker({ dateFormat: 'dd-mm-yy' });
-
-    </script>
 </body>
 </html>

@@ -78,6 +78,9 @@ Route::middleware(['web'])->group(function () {
     Route::get('/register', function(){
         return view('front.pages.register');
     });
+    Route::get('/contact', function(){
+        return view('front.pages.contact');
+    });
     Route::get('/about', function(){
         return view('front.pages.about');
     });

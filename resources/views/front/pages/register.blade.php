@@ -155,7 +155,7 @@
                alert(JSON.stringify(err));
             }   
         });
-        $("#date_of_birth").datepicker();
+        $("#date_of_birth").datepicker({ dateFormat: 'yy-mm-dd' });
 
     });
 

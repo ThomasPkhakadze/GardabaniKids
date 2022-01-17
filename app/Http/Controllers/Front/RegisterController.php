@@ -8,6 +8,7 @@ use App\Models\Kid;
 use App\Models\KindergardenBranch;
 use App\Models\KindergardenGroup;
 use App\Models\ParentGuardian;
+use Carbon\Carbon;
 
 
 class RegisterController extends Controller
@@ -19,25 +20,28 @@ class RegisterController extends Controller
 
         KindergardenGroup::find($request->group_id)->decrement('vacancy', 1);        
         // Checking if parent exists
-        $parentGuardian = ParentGuardian::where('id_number',$request->parent_id_number)->get();
+        $parentGuardian = ParentGuardian::where('id_number',$request->parent_id_number)->first();
         if($parentGuardian == null){
             // If not creating a new one
-            $parentOrGurardian = ParentGuardian::create([
+            // dd($request);
+            $parentGuardian = ParentGuardian::create([
                 'name' => $request->parent_name,
                 'lastname' => $request->parent_lastname,
                 'email' => $request->email,
                 'phone' => $request->phone,
                 'id_number' => $request->parent_id_number,
                 'guardian_type' => $request->guardian_type,
-            ]); 
-            // dd($parentGuardian, $parentOrGurardian);
+            ])->first(); 
         }
+        // dd($parentGuardian);
+        $test = Carbon::parse($request->date_of_birth)->format('Y-m-d');
+        // dd($test, $request->date_of_birth);
         Kid::create([
             'name' => $request->name,
             'lastname' => $request->lastname,
             'id_number' => $request->id_number,
-            'date_of_birth' => $request->date_of_birth,
-            'parent_guardian_id' => $parentOrGurardian->id??$parentGuardian->id,
+            'date_of_birth' => $test,
+            'parent_guardian_id' => $parentGuardian->id,
             'branch_id' => $request->branch_id,
             'group_id' => $request->group_id,
 

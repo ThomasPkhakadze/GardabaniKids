@@ -21,6 +21,9 @@ class Kid extends Model
         'updated_at',
         'deleted_at',
     ];
+    // protected $casts = [
+    //     'date_of_birth'  => 'date:d-m-Y',
+    // ];
 
     protected $fillable = [
         'name',
