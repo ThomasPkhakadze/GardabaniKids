@@ -106,7 +106,7 @@ thead th{
     padding: 0.8em !important;
 }
 /* about */
-.content{
+.pt-106{
     padding-top: 106px;
 }
 /* Responsives */
@@ -114,7 +114,7 @@ thead th{
     header{
         height: 80px;
     }
-    .content{
+    .pt-106{
         padding-top: 80px;
     }
     .navbar .nav-link{
@@ -126,7 +126,7 @@ thead th{
     header{
         height: 60px;
     }
-    .content{
+    .pt-106{
         padding-top: 60px;
     }
     .navbar .nav-link{
