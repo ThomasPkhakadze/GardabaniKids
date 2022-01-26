@@ -57,6 +57,7 @@
                         </div>
                         <div class="form-floating mb-3">
                             <select class="form-select br-23" id="floatingSelectBranches" aria-label="Floating label select example">
+                                <option selected>აირჩიეთ ფილიალი</option>
                             </select>
                             <label for="floatingSelectBranches">ბაღის ფილიალი</label>
                         </div>
@@ -79,6 +80,7 @@
 <script>
     $("#form-submit").on('click', function() {
         const kidFullname = fullNameSplit($("#name").val());
+        console.log(kidFullname);
         const parentFullname = fullNameSplit($("#parent_name").val());
         let data = {
             'parent_id_number' : $("#parent_id_number").val(),
@@ -161,7 +163,7 @@
 
     function fullNameSplit(fullName)
     {
-        console.log(fullName);  
+        // console.log(fullName);  
         const name = fullName.split(' ')[0]; 
         const lastname = fullName.split(' ')[1]; 
 

@@ -20,17 +20,7 @@ class ParentGuardian extends Model
         'deleted_at',
     ];
 
-    protected $fillable = [
-        'name',
-        'lastname',
-        'email',
-        'guardian_type',
-        'id_number',
-        'created_at',
-        'phone',
-        'updated_at',
-        'deleted_at',
-    ];
+    protected $guarded = ['id'];
 
     public function parentGuardianKids()
     {

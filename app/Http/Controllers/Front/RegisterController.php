@@ -15,10 +15,10 @@ class RegisterController extends Controller
 {
     public function register(Request $request){
         // Validate
-            
+        // dd($request);
+
         // Create
 
-        KindergardenGroup::find($request->group_id)->decrement('vacancy', 1);        
         // Checking if parent exists
         $parentGuardian = ParentGuardian::where('id_number',$request->parent_id_number)->first();
         if($parentGuardian == null){
@@ -46,6 +46,7 @@ class RegisterController extends Controller
             'group_id' => $request->group_id,
 
         ]);
+        KindergardenGroup::find($request->group_id)->decrement('vacancy', 1);        
         // redirect with message
         return json_decode('123');
     }

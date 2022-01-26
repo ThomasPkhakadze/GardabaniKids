@@ -31,7 +31,18 @@ class KidController extends Controller
 
         $branches = KindergardenBranch::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $groups = KindergardenGroup::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $groupsWithBranches = KindergardenGroup::where('vacancy','!=', '0')->with('kindergarden_branch')->get();
+
+        $groups = []; 
+
+        foreach($groupsWithBranches as $group){
+            $groupGroupIdAndBranchNames = [
+                "id" => $group->id,
+                "group" => $group->name,
+                "branch" => $group->kindergarden_branch->name
+            ];
+            array_push($groups, $groupGroupIdAndBranchNames);
+        }
 
         $parent_guardians = ParentGuardian::pluck('id_number', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -41,6 +52,7 @@ class KidController extends Controller
     public function store(StoreKidRequest $request)
     {
         $kid = Kid::create($request->all());
+        KindergardenGroup::find($kid->group_id)->decrement('vacancy', 1);        
 
         return redirect()->route('admin.kids.index');
     }
@@ -51,7 +63,18 @@ class KidController extends Controller
 
         $branches = KindergardenBranch::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $groups = KindergardenGroup::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $groupsWithBranches = KindergardenGroup::where('vacancy','!=', '0')->with('kindergarden_branch')->get();
+
+        $groups = []; 
+
+        foreach($groupsWithBranches as $group){
+            $groupGroupIdAndBranchNames = [
+                "id" => $group->id,
+                "group" => $group->name,
+                "branch" => $group->kindergarden_branch->name
+            ];
+            array_push($groups, $groupGroupIdAndBranchNames);
+        }
 
         $parent_guardians = ParentGuardian::pluck('id_number', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -62,6 +85,10 @@ class KidController extends Controller
 
     public function update(UpdateKidRequest $request, Kid $kid)
     {
+        if(intval($request->group_id) != $kid->group->id){
+            KindergardenGroup::find($kid->group->id)->decrement('vacancy', 1);        
+            KindergardenGroup::find($request->group_id)->increment('vacancy', 1);        
+        }
         $kid->update($request->all());
 
         return redirect()->route('admin.kids.index');

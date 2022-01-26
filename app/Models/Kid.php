@@ -22,18 +22,7 @@ class Kid extends Model
         'deleted_at',
     ];
 
-    protected $fillable = [
-        'name',
-        'lastname',
-        'id_number',
-        'date_of_birth',
-        'branch_id',
-        'group_id',
-        'parent_guardian_id',
-        'created_at',
-        'updated_at',
-        'deleted_at',
-    ];
+    protected $guarded = ['id'];
 
     public function getDateOfBirthAttribute($value)
     {

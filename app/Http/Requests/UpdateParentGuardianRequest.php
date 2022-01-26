@@ -27,9 +27,8 @@ class UpdateParentGuardianRequest extends FormRequest
             ],
             'id_number' => [
                 'required',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
+                'string',
+                'max:25',
                 'unique:parent_guardians,id_number,' . request()->route('parent_guardian')->id,
             ],
             'guardian_type' => [
