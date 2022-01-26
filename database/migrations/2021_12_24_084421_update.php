@@ -14,10 +14,10 @@ class Update extends Migration
     public function up()
     {
         Schema::table('kids', function (Blueprint $table) {
-            $table->bigInteger('id_number')->change();
+            $table->string('id_number', 20)->change();
         });
         Schema::table('parent_guardians', function (Blueprint $table) {
-            $table->bigInteger('id_number')->change();
+            $table->string('id_number', 20)->change();
         });
     }
 
