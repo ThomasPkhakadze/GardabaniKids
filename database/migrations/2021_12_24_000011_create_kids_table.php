@@ -12,7 +12,7 @@ class CreateKidsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('lastname');
-            $table->integer('id_number')->unique();
+            $table->string('id_number', 25)->unique();
             $table->date('date_of_birth');
             $table->timestamps();
             $table->softDeletes();

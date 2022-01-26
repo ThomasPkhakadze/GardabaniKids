@@ -41,10 +41,20 @@
             </div>
             <div class="form-group">
                 <label class="required" for="id_number">{{ trans('cruds.parentGuardian.fields.id_number') }}</label>
-                <input class="form-control {{ $errors->has('id_number') ? 'is-invalid' : '' }}" type="number" name="id_number" id="id_number" value="{{ old('id_number', '') }}" step="1" required>
+                <input class="form-control {{ $errors->has('id_number') ? 'is-invalid' : '' }}" type="text" name="id_number" id="id_number" value="{{ old('id_number', '') }}" step="1" required>
                 @if($errors->has('id_number'))
                     <div class="invalid-feedback">
                         {{ $errors->first('id_number') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.parentGuardian.fields.id_number_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label class="required" for="phone">ტელ.ნომერი</label>
+                <input class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}" type="number" name="phone" id="phone" value="{{ old('phone', '') }}" step="1" required>
+                @if($errors->has('phone'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('phone') }}
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.parentGuardian.fields.id_number_helper') }}</span>

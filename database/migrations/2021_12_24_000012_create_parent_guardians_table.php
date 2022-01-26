@@ -13,7 +13,7 @@ class CreateParentGuardiansTable extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->string('email')->nullable();
-            $table->integer('id_number')->unique();
+            $table->string('id_number', 25)->unique();
             $table->string('guardian_type');
             $table->timestamps();
             $table->softDeletes();
