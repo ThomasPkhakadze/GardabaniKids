@@ -3,6 +3,9 @@
     padding: 0 !important; */
     color: unset ;
 }
+p{
+    font-weight: bold;
+}
 .centered{
     top: 50%;
     left: 50%;

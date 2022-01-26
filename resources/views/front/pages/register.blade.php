@@ -1,4 +1,4 @@
-<div class="container center-vertically pt-60">
+<div class="container center-vertically pt-106">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-12">
             <div class="section-header">

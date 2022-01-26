@@ -52,8 +52,8 @@
             <div class="form-group">
                 <label class="required" for="branch_id">{{ trans('cruds.kid.fields.branch') }}</label>
                 <select class="form-control select2 {{ $errors->has('branch') ? 'is-invalid' : '' }}" name="branch_id" id="branch_id" required>
-                    @foreach($branches as $id => $entry)
-                        <option value="{{ $id }}" {{ old('branch_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                    @foreach($branches as $branch)
+                        <option value="{{ $branch['id'] }}" {{ old('branch_id') == $branch['id'] ? 'selected' : '' }}>{{ $branch['name'] }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('branch'))
@@ -67,7 +67,7 @@
                 <label for="group_id">{{ trans('cruds.kid.fields.group') }}</label>
                 <select class="form-control select2 {{ $errors->has('group') ? 'is-invalid' : '' }}" name="group_id" id="group_id">
                     @foreach($groups as $group)
-                        <option value="{{ $group['id'] }}" {{ old('group_id') == $id ? 'selected' : '' }}>{{ $group['group'] }}, {{ $group['branch'] }}</option>
+                        <option value="{{ $group['id'] }}" {{ old('group_id') == $group['id'] ? 'selected' : '' }}>{{ $group['group'] }}, {{ $group['branch'] }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('group'))

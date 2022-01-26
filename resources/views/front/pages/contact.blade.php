@@ -1,8 +1,8 @@
-<div class="container center-vertically pt-60">
+<div class="container center-vertically pt-106">
     <div class="row">
         <div class="col-xl-4 col-lg-4 col-md-12">
             <div class="section-header">
-                <p class="mb-0">რეგისტრაცია</p>
+                <p class="mb-0">დაგვიკავშირდით</p>
             </div>
         </div>
         <div class="col-xl-8 col-lg-8 col-md-12 br-46 bg-dark-blue py-4 px-5">

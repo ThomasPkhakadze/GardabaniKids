@@ -29,7 +29,19 @@ class KidController extends Controller
     {
         abort_if(Gate::denies('kid_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $branches = KindergardenBranch::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $allBranches = KindergardenBranch::with('kindergardenBranchKindergardenGroups')->get();
+        $branches = [];
+
+        foreach($allBranches as $branch){
+            $vacantGroups = $branch->kindergardenBranchKindergardenGroups->where('vacancy', '!=', '0');            
+            if(count($vacantGroups) > 0){
+                $availableBranch = [
+                    "id" => $branch->id,
+                    "name" => $branch->name
+                ];
+                array_push($branches, $availableBranch);
+            }
+        }
 
         $groupsWithBranches = KindergardenGroup::where('vacancy','!=', '0')->with('kindergarden_branch')->get();
 

@@ -49,7 +49,7 @@
         <div class="dot-windmill-big"></div>
     </div>
     <div class="container-fluid px-0">
-        <div class="row px-0 w-100">
+        <div class="row m-0 w-100">
             <div class="col-12 px-0">
                 <div class="content">
                     
