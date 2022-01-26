@@ -41,7 +41,12 @@
             </div>
             <div class="form-group">
                 <label class="required" for="guardian_type">{{ trans('cruds.parentGuardian.fields.guardian_type') }}</label>
-                <input class="form-control {{ $errors->has('guardian_type') ? 'is-invalid' : '' }}" type="text" name="guardian_type" id="guardian_type" value="{{ old('guardian_type', '') }}" required>
+                <select class="form-select" class="form-control {{ $errors->has('guardian_type') ? 'is-invalid' : '' }}" type="text" name="guardian_type" id="guardian_type" value="{{ old('guardian_type', '') }}" required>
+                    <option selected>მეურვის ტიპი</option>
+                    <option value="1">დედა</option>
+                    <option value="2">მამა</option>
+                    <option value="3">მეურვე</option>
+                </select>
                 @if($errors->has('guardian_type'))
                     <div class="invalid-feedback">
                         {{ $errors->first('guardian_type') }}
