@@ -21,18 +21,15 @@ class Kid extends Model
         'updated_at',
         'deleted_at',
     ];
-    // protected $casts = [
-    //     'date_of_birth'  => 'date:d-m-Y',
-    // ];
 
     protected $fillable = [
         'name',
         'lastname',
         'id_number',
         'date_of_birth',
-        'parent_guardian_id',
         'branch_id',
         'group_id',
+        'parent_guardian_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -48,11 +45,6 @@ class Kid extends Model
         $this->attributes['date_of_birth'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
-    public function parent_guardian()
-    {
-        return $this->belongsTo(ParentGuardian::class, 'parent_guardian_id');
-    }
-
     public function branch()
     {
         return $this->belongsTo(KindergardenBranch::class, 'branch_id');
@@ -61,6 +53,11 @@ class Kid extends Model
     public function group()
     {
         return $this->belongsTo(KindergardenGroup::class, 'group_id');
+    }
+
+    public function parent_guardian()
+    {
+        return $this->belongsTo(ParentGuardian::class, 'parent_guardian_id');
     }
 
     protected function serializeDate(DateTimeInterface $date)

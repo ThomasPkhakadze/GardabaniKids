@@ -27,9 +27,8 @@ class StoreKidRequest extends FormRequest
             ],
             'id_number' => [
                 'required',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
+                'string',
+                'max:25',
                 'unique:kids,id_number',
             ],
             'date_of_birth' => [

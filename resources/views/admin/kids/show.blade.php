@@ -57,14 +57,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.kid.fields.parent_guardian') }}
-                        </th>
-                        <td>
-                            {{ $kid->parent_guardian->id_number ?? '' }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.kid.fields.branch') }}
                         </th>
                         <td>
@@ -77,6 +69,14 @@
                         </th>
                         <td>
                             {{ $kid->group->name ?? '' }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.kid.fields.parent_guardian') }}
+                        </th>
+                        <td>
+                            {{ $kid->parent_guardian->id_number ?? '' }}
                         </td>
                     </tr>
                 </tbody>

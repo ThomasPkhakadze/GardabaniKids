@@ -40,14 +40,14 @@
                 <span class="help-block">{{ trans('cruds.parentGuardian.fields.email_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="id_number">{{ trans('cruds.parentGuardian.fields.id_number') }}</label>
-                <input class="form-control {{ $errors->has('id_number') ? 'is-invalid' : '' }}" type="text" name="id_number" id="id_number" value="{{ old('id_number', '') }}" step="1" required>
-                @if($errors->has('id_number'))
+                <label class="required" for="guardian_type">{{ trans('cruds.parentGuardian.fields.guardian_type') }}</label>
+                <input class="form-control {{ $errors->has('guardian_type') ? 'is-invalid' : '' }}" type="text" name="guardian_type" id="guardian_type" value="{{ old('guardian_type', '') }}" required>
+                @if($errors->has('guardian_type'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('id_number') }}
+                        {{ $errors->first('guardian_type') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.parentGuardian.fields.id_number_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.parentGuardian.fields.guardian_type_helper') }}</span>
             </div>
             <div class="form-group">
                 <label class="required" for="phone">ტელ.ნომერი</label>
@@ -60,14 +60,14 @@
                 <span class="help-block">{{ trans('cruds.parentGuardian.fields.id_number_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="guardian_type">{{ trans('cruds.parentGuardian.fields.guardian_type') }}</label>
-                <input class="form-control {{ $errors->has('guardian_type') ? 'is-invalid' : '' }}" type="text" name="guardian_type" id="guardian_type" value="{{ old('guardian_type', '') }}" required>
-                @if($errors->has('guardian_type'))
+                <label class="required" for="id_number">{{ trans('cruds.parentGuardian.fields.id_number') }}</label>
+                <input class="form-control {{ $errors->has('id_number') ? 'is-invalid' : '' }}" type="text" name="id_number" id="id_number" value="{{ old('id_number', '') }}" required>
+                @if($errors->has('id_number'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('guardian_type') }}
+                        {{ $errors->first('id_number') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.parentGuardian.fields.guardian_type_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.parentGuardian.fields.id_number_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

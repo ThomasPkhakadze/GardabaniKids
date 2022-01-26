@@ -20,7 +20,7 @@ class KidController extends Controller
     {
         abort_if(Gate::denies('kid_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $kids = Kid::with(['parent_guardian', 'branch', 'group'])->get();
+        $kids = Kid::with(['branch', 'group', 'parent_guardian'])->get();
 
         return view('admin.kids.index', compact('kids'));
     }
@@ -29,11 +29,11 @@ class KidController extends Controller
     {
         abort_if(Gate::denies('kid_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $parent_guardians = ParentGuardian::pluck('id_number', 'id')->prepend(trans('global.pleaseSelect'), '');
-
         $branches = KindergardenBranch::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $groups = KindergardenGroup::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        $parent_guardians = ParentGuardian::pluck('id_number', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.kids.create', compact('branches', 'groups', 'parent_guardians'));
     }
@@ -49,13 +49,13 @@ class KidController extends Controller
     {
         abort_if(Gate::denies('kid_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $parent_guardians = ParentGuardian::pluck('id_number', 'id')->prepend(trans('global.pleaseSelect'), '');
-
         $branches = KindergardenBranch::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $groups = KindergardenGroup::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $kid->load('parent_guardian', 'branch', 'group');
+        $parent_guardians = ParentGuardian::pluck('id_number', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        $kid->load('branch', 'group', 'parent_guardian');
 
         return view('admin.kids.edit', compact('branches', 'groups', 'kid', 'parent_guardians'));
     }
@@ -71,7 +71,7 @@ class KidController extends Controller
     {
         abort_if(Gate::denies('kid_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $kid->load('parent_guardian', 'branch', 'group');
+        $kid->load('branch', 'group', 'parent_guardian');
 
         return view('admin.kids.show', compact('kid'));
     }

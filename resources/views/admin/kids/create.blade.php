@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label class="required" for="id_number">{{ trans('cruds.kid.fields.id_number') }}</label>
-                <input class="form-control {{ $errors->has('id_number') ? 'is-invalid' : '' }}" type="text" name="id_number" id="id_number" value="{{ old('id_number', '') }}" step="1" required>
+                <input class="form-control {{ $errors->has('id_number') ? 'is-invalid' : '' }}" type="text" name="id_number" id="id_number" value="{{ old('id_number', '') }}" required>
                 @if($errors->has('id_number'))
                     <div class="invalid-feedback">
                         {{ $errors->first('id_number') }}
@@ -48,20 +48,6 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.kid.fields.date_of_birth_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label class="required" for="parent_guardian_id">{{ trans('cruds.kid.fields.parent_guardian') }}</label>
-                <select class="form-control select2 {{ $errors->has('parent_guardian') ? 'is-invalid' : '' }}" name="parent_guardian_id" id="parent_guardian_id" required>
-                    @foreach($parent_guardians as $id => $entry)
-                        <option value="{{ $id }}" {{ old('parent_guardian_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
-                    @endforeach
-                </select>
-                @if($errors->has('parent_guardian'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('parent_guardian') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.kid.fields.parent_guardian_helper') }}</span>
             </div>
             <div class="form-group">
                 <label class="required" for="branch_id">{{ trans('cruds.kid.fields.branch') }}</label>
@@ -90,6 +76,20 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.kid.fields.group_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label class="required" for="parent_guardian_id">{{ trans('cruds.kid.fields.parent_guardian') }}</label>
+                <select class="form-control select2 {{ $errors->has('parent_guardian') ? 'is-invalid' : '' }}" name="parent_guardian_id" id="parent_guardian_id" required>
+                    @foreach($parent_guardians as $id => $entry)
+                        <option value="{{ $id }}" {{ old('parent_guardian_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('parent_guardian'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('parent_guardian') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.kid.fields.parent_guardian_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

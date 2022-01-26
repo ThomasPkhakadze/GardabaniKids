@@ -49,14 +49,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.parentGuardian.fields.id_number') }}
-                        </th>
-                        <td>
-                            {{ $parentGuardian->id_number }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.parentGuardian.fields.guardian_type') }}
                         </th>
                         <td>

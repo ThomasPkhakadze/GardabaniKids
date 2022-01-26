@@ -24,10 +24,10 @@ class ParentGuardian extends Model
         'name',
         'lastname',
         'email',
-        'id_number',
-        'phone',
         'guardian_type',
+        'id_number',
         'created_at',
+        'phone',
         'updated_at',
         'deleted_at',
     ];

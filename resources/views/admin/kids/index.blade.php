@@ -38,12 +38,6 @@
                             {{ trans('cruds.kid.fields.date_of_birth') }}
                         </th>
                         <th>
-                            {{ trans('cruds.kid.fields.parent_guardian') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.parentGuardian.fields.id_number') }}
-                        </th>
-                        <th>
                             {{ trans('cruds.kid.fields.branch') }}
                         </th>
                         <th>
@@ -51,6 +45,9 @@
                         </th>
                         <th>
                             {{ trans('cruds.kindergardenGroup.fields.vacancy') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.kid.fields.parent_guardian') }}
                         </th>
                         <th>
                             &nbsp;
@@ -79,12 +76,6 @@
                                 {{ $kid->date_of_birth ?? '' }}
                             </td>
                             <td>
-                                {{ $kid->parent_guardian->id_number ?? '' }}
-                            </td>
-                            <td>
-                                {{ $kid->parent_guardian->id_number ?? '' }}
-                            </td>
-                            <td>
                                 {{ $kid->branch->name ?? '' }}
                             </td>
                             <td>
@@ -92,6 +83,9 @@
                             </td>
                             <td>
                                 {{ $kid->group->vacancy ?? '' }}
+                            </td>
+                            <td>
+                                {{ $kid->parent_guardian->id_number ?? '' }}
                             </td>
                             <td>
                                 @can('kid_show')

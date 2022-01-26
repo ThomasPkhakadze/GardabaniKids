@@ -35,10 +35,10 @@
                             {{ trans('cruds.parentGuardian.fields.email') }}
                         </th>
                         <th>
-                            {{ trans('cruds.parentGuardian.fields.id_number') }}
+                            {{ trans('cruds.parentGuardian.fields.guardian_type') }}
                         </th>
                         <th>
-                            {{ trans('cruds.parentGuardian.fields.guardian_type') }}
+                            {{ trans('cruds.parentGuardian.fields.id_number') }}
                         </th>
                         <th>
                             &nbsp;
@@ -64,10 +64,10 @@
                                 {{ $parentGuardian->email ?? '' }}
                             </td>
                             <td>
-                                {{ $parentGuardian->id_number ?? '' }}
+                                {{ $parentGuardian->guardian_type ?? '' }}
                             </td>
                             <td>
-                                {{ $parentGuardian->guardian_type ?? '' }}
+                                {{ $parentGuardian->id_number ?? '' }}
                             </td>
                             <td>
                                 @can('parent_guardian_show')
